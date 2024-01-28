@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">hinova</string>
+    <string name="login_title">Login</string>
+    <string name="login_email">E-mail</string>
+    <string name="login_password">Password</string>
+    <string name="login_new_account_text">Don\'t have an account?</string>
+    <string name="login_register">Register</string>
+    <string name="login_logo_hinova_description">Logo Hinova</string>
+</resources>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "688396952458",
+    "project_id": "hinova-232bf",
+    "storage_bucket": "hinova-232bf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:688396952458:android:a7fb90480d8b88f5df5e73",
+        "android_client_info": {
+          "package_name": "com.example.hinova"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1igayluhrxTkfiR4ffM71a1ZP9K29N9E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

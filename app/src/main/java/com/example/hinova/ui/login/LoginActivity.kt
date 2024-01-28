@@ -2,20 +2,25 @@ package com.example.hinova.ui.login
 
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.LayoutInflater
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.example.hinova.databinding.ActivityLoginBinding
 import com.example.hinova.extension.isValidAuth
+import com.example.hinova.infrastructure.BindingActivity
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : BindingActivity<ActivityLoginBinding>() {
 
-    private lateinit var binding: ActivityLoginBinding
+    private val viewModel: LoginViewModel by viewModel()
+
+    override fun onCreateBinding(layoutInflater: LayoutInflater): ActivityLoginBinding {
+        return ActivityLoginBinding.inflate(layoutInflater)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLoginBinding.inflate(layoutInflater)
-        setContentView(binding.root)
         setupListeners()
+        setupObservers()
     }
 
     private fun setupListeners() {
@@ -25,15 +30,37 @@ class LoginActivity : AppCompatActivity() {
 
         binding.btnLogin.setOnClickListener {
             when {
-                TextUtils.isEmpty(binding.etLoginEmail.isValidAuth()) -> {
-                    toast("Please insert an Email.")
+                TextUtils.isEmpty(binding.etLoginCpf.isValidAuth()) -> {
+                    toast("Please insert an cpf.")
                 }
 
                 TextUtils.isEmpty(binding.etLoginPassword.isValidAuth()) -> {
                     toast("Please insert a Password.")
                 }
                 else -> {
-                    //Lógica login
+                    viewModel.login(
+                        binding.etLoginCpf.isValidAuth(),
+                        binding.etLoginPassword.isValidAuth()
+                    )
+                }
+            }
+        }
+    }
+
+    private fun setupObservers() {
+        viewModel.state.observe(this) { state ->
+            when (state) {
+                is LoginState.Success -> {
+                    //Implement the home screen
+                }
+                LoginState.EmptyState -> {
+                    toast("Empty")
+                }
+                LoginState.Loading -> {
+                    toast("Loading")
+                }
+                LoginState.Error -> {
+                    toast("Error")
                 }
             }
         }

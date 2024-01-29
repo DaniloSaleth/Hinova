@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.transform
 
 class LoginRepositoryImpl : LoginRepository {
     override fun login(cpf: String, password: String): Flow<UserData> = flow {
-        if (cpf == "78885983073" && password == "37038958887") {
+        if (cpf == "78885983073" && password == "37038958887" || cpf == "1" && password == "1") {
             emit(loginMock)
         } else {
             //Realizar requisição

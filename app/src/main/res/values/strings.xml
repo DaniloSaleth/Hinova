@@ -1,9 +1,14 @@
 <resources>
-    <string name="app_name">hinova</string>
+    <string name="app_name">Hinova</string>
     <string name="login_title">Login</string>
     <string name="login_cpf">CPF</string>
     <string name="login_password">Password</string>
     <string name="login_new_account_text">Don\'t have an account?</string>
     <string name="login_register">Register</string>
     <string name="login_logo_hinova_description">Logo Hinova</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="tab_text_1">Oficina</string>
+    <string name="tab_text_2">Indique um amigo</string>
+    <string name="workshop">Oficinas</string>
+    <string name="invite">Indicação</string>
 </resources>

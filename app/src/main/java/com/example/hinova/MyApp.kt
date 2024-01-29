@@ -1,6 +1,8 @@
 package com.example.hinova
 
 import android.app.Application
+import androidx.viewbinding.BuildConfig
+import com.example.hinova.di.loadNavigation
 import com.example.hinova.di.loadRepositories
 import com.example.hinova.di.loadServices
 import com.example.hinova.di.loadViewModels
@@ -17,7 +19,7 @@ class MyApp : Application() {
                 androidLogger()
             }
             androidContext(this@MyApp)
-            modules(loadViewModels, loadRepositories, loadServices)
+            modules(loadViewModels, loadRepositories, loadServices, loadNavigation)
         }
     }
 }

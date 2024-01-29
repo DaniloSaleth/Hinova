@@ -4,6 +4,6 @@ import com.example.hinova.model.UserData
 import retrofit2.http.GET
 
 interface HinovaApi {
-    @GET("movie/now_playing")
-    suspend fun getUserData(): UserData
+    @GET("api/Oficina")
+    suspend fun getWorkshops(): UserData
 }

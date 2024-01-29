@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.Hinova" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/black</item>
-        <item name="colorPrimaryVariant">@color/cardview_shadow_start_color</item>
+        <item name="colorPrimary">@color/ic_hinova_background</item>
+        <item name="colorPrimaryVariant">@color/ic_hinova_background</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>

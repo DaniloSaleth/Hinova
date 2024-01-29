@@ -7,11 +7,15 @@ import android.widget.Toast
 import com.example.hinova.databinding.ActivityLoginBinding
 import com.example.hinova.extension.isValidAuth
 import com.example.hinova.infrastructure.BindingActivity
+import com.example.hinova.model.UserData
+import com.example.hinova.navigation.home.HomeNavigation
+import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginActivity : BindingActivity<ActivityLoginBinding>() {
 
     private val viewModel: LoginViewModel by viewModel()
+    private val homeNavigation: HomeNavigation by inject()
 
     override fun onCreateBinding(layoutInflater: LayoutInflater): ActivityLoginBinding {
         return ActivityLoginBinding.inflate(layoutInflater)
@@ -51,7 +55,7 @@ class LoginActivity : BindingActivity<ActivityLoginBinding>() {
         viewModel.state.observe(this) { state ->
             when (state) {
                 is LoginState.Success -> {
-                    //Implement the home screen
+                    startHome(state.result)
                 }
                 LoginState.EmptyState -> {
                     toast("Empty")
@@ -64,6 +68,11 @@ class LoginActivity : BindingActivity<ActivityLoginBinding>() {
                 }
             }
         }
+    }
+
+    private fun startHome(userData: UserData) {
+        val intent = homeNavigation.getHome(this, userData)
+        startActivity(intent)
     }
 
     private fun toast(message: String) {

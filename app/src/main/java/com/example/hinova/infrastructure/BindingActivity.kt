@@ -3,10 +3,12 @@ package com.example.hinova.infrastructure
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewbinding.ViewBinding
 
 abstract class BindingActivity<T : ViewBinding> : AppCompatActivity() {
 
+    val viewPagerBehavior = FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
     val binding: T get() = _binding
 
     private lateinit var _binding: T

@@ -55,7 +55,8 @@ class LoginActivity : BindingActivity<ActivityLoginBinding>() {
         viewModel.state.observe(this) { state ->
             when (state) {
                 is LoginState.Success -> {
-                    startHome(state.result)
+                    val data = state.result
+                    startHome(data)
                 }
                 LoginState.EmptyState -> {
                     toast("Empty")

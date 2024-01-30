@@ -8,8 +8,8 @@ import com.example.hinova.ui.home.HomeActivity
 
 class HomeNavigationImpl : HomeNavigation {
     override fun getHome(context: Context, userData: UserData): Intent {
-        return Intent(context, HomeActivity::class.java).apply {
-            putExtra(HOME_DATA_PARAM, userData)
-        }
+        val intent = Intent(context, HomeActivity::class.java)
+        intent.putExtra(HOME_DATA_PARAM, userData)
+        return intent
     }
 }

@@ -11,4 +11,11 @@
     <string name="tab_text_2">Indique um amigo</string>
     <string name="workshop">Oficinas</string>
     <string name="invite">Indicação</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="friend_name">Nome do Amigo</string>
+    <string name="friend_email">E-mail do Amigo</string>
+    <string name="friend_phone">Telefone do Amigo</string>
+    <string name="friend_invite">Convidar amigo</string>
+    <string name="invite_a_friend_text">Preencha os dados para convidar um amigo</string>
 </resources>

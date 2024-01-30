@@ -1,9 +1,9 @@
 package com.example.hinova.network
 
-import com.example.hinova.model.UserData
+import com.example.hinova.model.WorkshopResponse
 import retrofit2.http.GET
 
 interface HinovaApi {
-    @GET("api/Oficina")
-    suspend fun getWorkshops(): UserData
+    @GET("Api/Oficina")
+    suspend fun getWorkshops(): WorkshopResponse
 }

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/ic_hinova_background"
     tools:context=".ui.home.fragment.workshop.WorkshopFragment">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -12,5 +13,4 @@
         android:clipToPadding="false"
         android:padding="@dimen/space_small"
         tools:listitem="@layout/workshop_item" />
-
 </FrameLayout>

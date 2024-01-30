@@ -8,10 +8,13 @@ import com.example.hinova.navigation.invite.InviteNavigationImpl
 import com.example.hinova.navigation.workshop.WorkshopNavigation
 import com.example.hinova.navigation.workshop.WorkshopNavigationImpl
 import com.example.hinova.network.HinovaApi
+import com.example.hinova.repository.invite.InviteRepository
+import com.example.hinova.repository.invite.InviteRepositoryImpl
 import com.example.hinova.repository.login.LoginRepository
 import com.example.hinova.repository.login.LoginRepositoryImpl
 import com.example.hinova.repository.workshop.WorkshopRepository
 import com.example.hinova.repository.workshop.WorkshopRepositoryImpl
+import com.example.hinova.ui.home.fragment.invite.InviteViewModel
 import com.example.hinova.ui.home.fragment.workshop.WorkshopViewModel
 import com.example.hinova.ui.login.LoginViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -29,11 +32,13 @@ val loadNavigation = module {
 val loadViewModels = module {
     viewModel { LoginViewModel(get()) }
     viewModel { WorkshopViewModel(get()) }
+    viewModel { InviteViewModel(get()) }
 }
 
 val loadRepositories = module {
     factory<LoginRepository> { LoginRepositoryImpl() }
     factory<WorkshopRepository> { WorkshopRepositoryImpl(get()) }
+    factory<InviteRepository> { InviteRepositoryImpl(get()) }
 }
 
 val loadServices = module {

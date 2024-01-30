@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.example.hinova.databinding.ActivityLoginBinding
 import com.example.hinova.extension.isValidAuth
 import com.example.hinova.infrastructure.BindingActivity
+import com.example.hinova.infrastructure.UserDataManager
 import com.example.hinova.model.UserData
 import com.example.hinova.navigation.home.HomeNavigation
 import org.koin.android.ext.android.inject
@@ -52,6 +53,7 @@ class LoginActivity : BindingActivity<ActivityLoginBinding>() {
             when (state) {
                 is LoginState.Success -> {
                     val data = state.result
+                    UserDataManager.getInstance().setUserData(data)
                     startHome(data)
                 }
                 LoginState.EmptyState -> {

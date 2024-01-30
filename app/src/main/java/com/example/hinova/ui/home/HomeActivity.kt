@@ -31,7 +31,7 @@ class HomeActivity : BindingActivity<ActivityHomeBinding>() {
     private fun setupTabLayout() {
         val pagerAdapter = PagerAdapter(supportFragmentManager)
         pagerAdapter.addFragment(workshopNavigation.getWorkshopFragment(params.mobileCode), getString(R.string.workshop))
-        pagerAdapter.addFragment(inviteNavigation.getInviteFragment(), getString(R.string.invite))
+        pagerAdapter.addFragment(inviteNavigation.getInviteFragment(params), getString(R.string.invite))
 
         binding.viewPager.adapter = pagerAdapter
         binding.tabLayout.setupWithViewPager(binding.viewPager)

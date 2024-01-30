@@ -23,6 +23,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_small"
             android:paddingVertical="@dimen/space_small"
             tools:text="Teste 1" />
     </androidx.cardview.widget.CardView>

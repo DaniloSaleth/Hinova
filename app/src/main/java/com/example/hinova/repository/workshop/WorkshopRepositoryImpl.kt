@@ -8,7 +8,8 @@ import kotlinx.coroutines.flow.flow
 class WorkshopRepositoryImpl(
     private val hinovaApi: HinovaApi
 ) : WorkshopRepository {
-    override fun getWorkshops(): Flow<WorkshopResponse> = flow {
-        emit(hinovaApi.getWorkshops())
+    override fun getWorkshops(mobileCode: Int): Flow<WorkshopResponse> = flow {
+        val data = hinovaApi.getWorkshops(mobileCode)
+        emit(data)
     }
 }

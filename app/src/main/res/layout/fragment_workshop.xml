@@ -3,8 +3,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/ic_hinova_background"
     tools:context=".ui.home.fragment.workshop.WorkshopFragment">
+
+    <TextView
+        android:id="@+id/error_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size_medium"
+        tools:text="Teste menssagem" />
+
+    <ProgressBar
+        android:id="@+id/loadingProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/workshop_recycler_view"
@@ -12,5 +32,7 @@
         android:layout_height="match_parent"
         android:clipToPadding="false"
         android:padding="@dimen/space_small"
-        tools:listitem="@layout/workshop_item" />
+        tools:listitem="@layout/workshop_item"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
 </FrameLayout>

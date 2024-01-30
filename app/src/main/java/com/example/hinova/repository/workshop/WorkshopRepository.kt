@@ -4,5 +4,5 @@ import com.example.hinova.model.WorkshopResponse
 import kotlinx.coroutines.flow.Flow
 
 interface WorkshopRepository {
-    fun getWorkshops(): Flow<WorkshopResponse>
+    fun getWorkshops(mobileCode: Int): Flow<WorkshopResponse>
 }

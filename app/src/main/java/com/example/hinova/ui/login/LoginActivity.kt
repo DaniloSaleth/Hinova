@@ -28,10 +28,6 @@ class LoginActivity : BindingActivity<ActivityLoginBinding>() {
     }
 
     private fun setupListeners() {
-        binding.tvRegister.setOnClickListener {
-            //Implement the register screen
-        }
-
         binding.btnLogin.setOnClickListener {
             when {
                 TextUtils.isEmpty(binding.etLoginCpf.isValidAuth()) -> {

@@ -16,22 +16,13 @@ class WorkshopViewModel(
     private val _state = MutableLiveData<WorkshopState>()
     val state: LiveData<WorkshopState> = _state
 
-    init {
-        getWorkshops()
-    }
-
-    private fun getWorkshops() {
-        viewModelScope.launch {
-            repository.getWorkshops()
-                .onStart {
-                    //Estado de loading
-                }
-                .catch {
-                    //Estado de erro
-                }
-                .collect { userData ->
-                    _state.value = WorkshopState.Success(userData)
-                }
+    fun getWorkshops(mobileCode: Int) = viewModelScope.launch {
+        repository.getWorkshops(mobileCode).onStart {
+            _state.value = WorkshopState.Loading
+        }.catch { e ->
+            _state.value = WorkshopState.Error(e.message.toString())
+        }.collect { userData ->
+            _state.value = WorkshopState.Success(userData)
         }
     }
 }

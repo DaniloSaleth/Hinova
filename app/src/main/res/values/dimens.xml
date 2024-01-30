@@ -5,4 +5,5 @@
     <dimen name="space_large">32dp</dimen>
     <dimen name="space_big">48dp</dimen>
     <dimen name="size_medium">24sp</dimen>
+    <dimen name="size_small">20sp</dimen>
 </resources>
